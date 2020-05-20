@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css" rel="stylesheet"  crossorigin="anonymous" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block head %}
+    <title>Blog</title>
+    {% endblock head %}
+  </head>
+  <body>
+    {% block header %}
+      {% include 'blog/common/header.html' %}
+    {% endblock header %}
+
+    <main class="container">
+      {% block content %}
+      {% endblock content %}
+    </main>
+
+    {% block footer %}
+      {% include 'blog/common/footer.html' %}
+    {% endblock footer %}
+  </body>
+</html>

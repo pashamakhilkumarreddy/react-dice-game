@@ -1,0 +1,37 @@
+*,
+**::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  position: relative;
+  min-height: 100vh;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.header {
+  border-bottom: 1px solid #f7f7f7;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  border-top: 2px solid #ddd;
+  padding: 1.5rem;
+}
+
+.mt-auto {
+  margin: auto;
+}
+
+.mt-6 {
+  margin-top: 3rem;
+}
