@@ -35,3 +35,34 @@ body {
 .mt-6 {
   margin-top: 3rem;
 }
+
+aside.side-bar-menu {
+  padding: 1rem 3rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+ul.menu-list {
+  border: 2px solid #f7f7f7;
+}
+
+ul.menu-list li:not(:last-child) {
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.menu-list a {
+  padding: 1rem;
+}
+
+.column.side-bar {
+  position: fixed;
+  top: 10vh;
+  right: 1rem;
+}
+
+.auth-form {
+  padding: 4rem;
+  border: 1px solid #f7f7f7;
+  border-radius: 4px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+}
