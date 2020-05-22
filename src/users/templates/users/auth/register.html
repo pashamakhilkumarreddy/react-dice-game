@@ -1,0 +1,70 @@
+{% extends 'blog/base.html' %}
+{% block head %}
+<title>Register</title>
+{% endblock head %}
+
+{% block content %}
+<div class="columns is-centered is-vcentered mt-6">
+  <div class="column is-6">
+    <form action="/register" method="POST" class="auth-form" autocomplete="off">
+      {% csrf_token %}
+      <h1 class="title is-1 has-text-centered">Register</h1>
+      <div class="field">
+        <label for="register-email" class="label">Email</label>
+        <div class="control">
+          <input id="register-email" type="email" name="email" class="input" placeholder="Please enter your email" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="register-password" class="label">Password</label>
+        <div class="control">
+          <input id="register-password" type="password" name="password" class="input"
+            placeholder="Please enter your password" autocomplete="new-password" />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" checked>
+            I agree to the <a href="#">terms and conditions</a>
+          </label>
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <button id="submit-user" class="button is-link">Register</button>
+        </div>
+        <div class="control">
+          <button class="button is-link is-light">Cancel</button>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <p class="has-text-grey-darker">Already a user? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  const emailValue = document.querySelector('#register-email').value;
+  const passwordValue = document.querySelector('#register-password').value;
+  const submitButton = document.querySelector('#submit-user');
+  submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const login = (email, password) => {
+      const payload = {
+        email,
+        password
+      }
+      const details = fetch('/register', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      });
+      console.log(details);
+    }
+    login('assafd', 'asfsafsd');
+  })
+
+</script>
+{% endblock content %}

@@ -7,8 +7,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css" rel="stylesheet"
-    crossorigin="anonymous" />
+  <link href="{% static 'css/bulma.css' %}" rel="stylesheet" />
   <link href="{% static 'css/main.css' %}" rel="stylesheet" />
   <script src="{% static 'js/main.js' %}"></script>
   {% block head %}
@@ -22,32 +21,35 @@
   {% endblock header %}
 
   <main class="container">
-    <div class="columns is-centered is-vcentered mt-6">
-      
-        {% block content %}
+    {% if messages %}
 
-        {% endblock content %}
-        
-      <div class="side-bar column is-3">
-        <aside class="menu side-bar-menu">
-          <p class="title is-3">Our Sidebar</p>
-          <p class="subtitle">Any information aqui</p>
-          <ul class="menu-list">
-            <li>
-              <a href="">Latest Posts</a>
-            </li>
-            <li>
-              <a href="">Announcements</a>
-            </li>
-            <li>
-              <a href="">Calendars</a>
-            </li>
-            <li>
-              <a href="">etc</a>
-            </li>
-          </ul>
-        </aside>
-      </div>
+    {% for message in messages %}
+    {% endfor %}
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <div class="side-bar column is-3">
+      <aside class="menu side-bar-menu">
+        <p class="title is-3">Our Sidebar</p>
+        <p class="subtitle">Any information aqui</p>
+        <ul class="menu-list">
+          <li>
+            <a href="">Latest Posts</a>
+          </li>
+          <li>
+            <a href="">Announcements</a>
+          </li>
+          <li>
+            <a href="">Calendars</a>
+          </li>
+          <li>
+            <a href="">etc</a>
+          </li>
+        </ul>
+      </aside>
     </div>
   </main>
 

@@ -11,9 +11,3 @@ def home_view(request, *args, **kwargs):
 
 def about_view(request, *args, **kwargs):
   return render(request, 'blog/about.html')
-
-def login_view(request, *args, **kwargs):
-  return render(request, 'blog/auth/login.html')
-
-def register_view(request, *args, **kwargs):
-  return render(request, 'blog/auth/register.html')
